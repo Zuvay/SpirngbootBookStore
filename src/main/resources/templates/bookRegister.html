@@ -20,24 +20,24 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black" href="available_books">Available Books</a>
+                    <a class="nav-link text-black" href="/available_books">Available Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black" href="my_books">My Books</a>
+                    <a class="nav-link text-black" href="/my_books">My Books</a>
                 </li>
             </ul>
             <div>
-                <a class="nav-link text-black" href="book_register">New Book Register</a>
+                <a class="nav-link text-black" href="/book_register">New Book Register</a>
             </div>
         </div>
     </div>
 </nav>
 <div class="container mt-5">
     <h2>Register New Book</h2>
-    <form action="/submit_book" method="post">
+    <form th:action="@{/save}" method="post">
         <div class="mb-3">
-            <label for="bookName" class="form-label">Kitap İsmi</label>
-            <input type="text" class="form-control" id="bookName" name="bookName" required>
+            <label for="name" class="form-label">Kitap İsmi</label>
+            <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="mb-3">
             <label for="author" class="form-label">Yazar</label>
@@ -45,7 +45,7 @@
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Fiyat</label>
-            <input type="number" class="form-control" id="price" name="price" required>
+            <input type="text" class="form-control" id="price" name="price" required>
         </div>
         <button type="submit" class="btn btn-primary">Kaydet</button>
     </form>
