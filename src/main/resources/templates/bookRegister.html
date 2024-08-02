@@ -33,12 +33,22 @@
     </div>
 </nav>
 <div class="container mt-5">
-    <div class="text-center">
-        <h1 class="display-4">Kitap Dükkanına Hoşgeldiniz</h1>
-        <p class="lead">İkinci el kitaplarınızı alıp satabileceğiniz bir platform</p>
-        <p class="mb-4">Yeni kitaplar keşfedin, favori kitaplarınızı başkalarıyla paylaşın ve okuma deneyiminizi zenginleştirin.</p>
-        <a href="available_books" class="btn btn-primary btn-lg">Kitaplara Göz At</a>
-    </div>
+    <h2>Register New Book</h2>
+    <form action="/submit_book" method="post">
+        <div class="mb-3">
+            <label for="bookName" class="form-label">Kitap İsmi</label>
+            <input type="text" class="form-control" id="bookName" name="bookName" required>
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Yazar</label>
+            <input type="text" class="form-control" id="author" name="author" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Fiyat</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoZb2B+tnE7p47gk2MBP3ivQj5iDGx2srfscn5Z6M9Kjpds" crossorigin="anonymous"></script>
 </body>

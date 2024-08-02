@@ -9,4 +9,16 @@ public class BookController {
     public String home(){
         return "home";
     }
+    @GetMapping("/book_register") //Burası html dosyasında href verdiğimiz yer
+    public String bookRegister(){
+        return "bookRegister"; //bu da html dosyasının adı
+    }
+    @GetMapping("/available_books")
+    public String availableBooks(){
+        return "availableBooks";
+    }
+    @GetMapping("/my_books")
+    public String myBooks(){
+        return "myBooks";
+    }
 }
