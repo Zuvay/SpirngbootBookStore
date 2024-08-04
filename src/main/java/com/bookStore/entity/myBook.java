@@ -3,8 +3,8 @@ package com.bookStore.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "book")
-public class Book {
+@Table(name = "my_books")
+public class myBook {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -15,11 +15,10 @@ public class Book {
     @Column(name = "price")
     private String price;
 
-    public Book() {
-
+    public myBook() {
     }
 
-    public Book(int id, String name, String author, String price) {
+    public myBook(int id, String name, String author, String price) {
         this.id = id;
         this.name = name;
         this.author = author;

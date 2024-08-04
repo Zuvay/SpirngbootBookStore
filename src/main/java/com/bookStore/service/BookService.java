@@ -12,20 +12,22 @@ public class BookService {
     @Autowired
     private BookRepository repository;
 
-    public void save(Book book){
+    public void save(Book book) {
         repository.save(book);
     }
-    public void delete(int id){
+    public void findById(int id){
+        repository.findById(id);
+    }
+    public Book findBookById(int id){
+        Book book =repository.findById(id).get();
+        return book;
+    }
+
+    public void delete(int id) {
         repository.deleteById(id);
     }
-    public List<Book> findAllBooks(){
+
+    public List<Book> findAllBooks() {
         return repository.findAll();
     }
-
-    public List<Book> findMyBooks() {
-        //my books diye yeni repo oluştur
-        //verileri ordan çek diğer taraftaki buton ile de oraya ekle
-        return repository.findAll();
-    }
-
 }
