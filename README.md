@@ -13,7 +13,7 @@ Bu proje, bir kitap pazarı uygulaması olup, kullanıcıların pazara kitap ekl
 
 - **Java**
 - **Spring Boot**
-- **Thymeleaf**: Frontend geliştirme için kullanıldı.
+- **Thymeleaf**
 - **Katmanlı Mimari**
 
 ## Proje Yapısı
