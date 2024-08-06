@@ -17,23 +17,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Ana Sayfa</a>
+                    <a class="nav-link active" aria-current="page" href="/book/">Ana Sayfa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black" href="available_books">Pazardaki Kitaplar</a>
+                    <a class="nav-link text-black" href="/book/available_books">Pazardaki Kitaplar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black" href="my_books">Sepetimdeki Kitaplar</a>
+                    <a class="nav-link text-black" href="/my_book/my_books">Sepetimdeki Kitaplar</a>
                 </li>
             </ul>
             <div>
-                <a class="nav-link text-black" href="book_register">Pazara Kitap Koy</a>
+                <a class="nav-link text-black" href="/book/book_register">Pazara Kitap Koy</a>
             </div>
         </div>
     </div>
 </nav>
 <div class="container mt-5">
-    <h2>My Books</h2>
+    <h2>Kütüphanem</h2>
     <table class="table table-striped table-hover">
         <thead>
         <tr>
@@ -50,7 +50,7 @@
             <td th:text="${book.author}"></td>
             <td th:text="${book.price}"></td>
             <td>
-                <form action="/delete_from_mybook" method="post" onsubmit="return confirm('Are you sure you want to delete this book?');">
+                <form action="/my_book/delete_from_mybook" method="post" onsubmit="return confirm('Are you sure you want to delete this book?');">
                     <input type="hidden" name="id" th:value="${book.id}" />
                     <button type="submit" class="btn btn-danger">Kitaplığımdan sil</button>
                 </form>

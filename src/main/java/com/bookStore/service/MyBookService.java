@@ -1,7 +1,7 @@
 package com.bookStore.service;
 
 import com.bookStore.entity.Book;
-import com.bookStore.entity.myBook;
+import com.bookStore.entity.MyBook;
 import com.bookStore.repository.MyBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,14 +20,14 @@ public class MyBookService {
         myBookRepository.deleteById(id);
     }
 
-    public List<myBook> findMyBooks() {
+    public List<MyBook> findMyBooks() {
         return myBookRepository.findAll();
     }
 
     public void addBookToMyBooks(int id) {
         Book book = bookService.findBookById(id);
         if (book != null) {
-            myBook myBook = new myBook();
+            MyBook myBook = new MyBook();
             myBook.setId(book.getId());
             myBook.setName(book.getName());
             myBook.setAuthor(book.getAuthor());

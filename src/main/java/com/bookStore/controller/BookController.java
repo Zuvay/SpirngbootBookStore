@@ -1,7 +1,7 @@
 package com.bookStore.controller;
 
 import com.bookStore.entity.Book;
-import com.bookStore.entity.myBook;
+import com.bookStore.entity.MyBook;
 import com.bookStore.service.BookService;
 import com.bookStore.service.MyBookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +12,10 @@ import org.springframework.ui.Model;
 import java.util.List;
 
 @Controller
+@RequestMapping("/book")
 public class BookController {
     @Autowired
     private BookService service;
-    @Autowired
-    private MyBookService myBookService;
-
     @GetMapping("/")
     public String home() {
         return "home";
@@ -35,34 +33,16 @@ public class BookController {
         return "availableBooks";
     }
 
-    @GetMapping("/my_books") //Sayfaya git ve kitaplığı göster
-    public String myBooks(Model model) {
-        List<myBook> myBooks = myBookService.findMyBooks();
-        model.addAttribute("myBooks", myBooks);
-        return "myBooks";
-    }
-
     @PostMapping("/register_book")
     public String addBook(@ModelAttribute Book book) {
         service.save(book);
-        return "redirect:/available_books";
+        return "redirect:/book/available_books";
     }
 
     @PostMapping("/delete")
     public String deleteBook(@RequestParam int id) {
         service.delete(id);
-        return "redirect:/available_books";
+        return "redirect:/book/available_books";
     }
 
-    @PostMapping("/delete_from_mybook")
-    public String deleteMyBook(@RequestParam int id) {
-        myBookService.delete(id);
-        return "redirect:/my_books";
-    }
-
-    @PostMapping("/add_to_my_books")
-    public String addToMyBooks(@RequestParam int id){
-        myBookService.addBookToMyBooks(id);
-        return "redirect:/available_books";
-    }
 }
