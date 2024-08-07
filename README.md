@@ -2,6 +2,8 @@
 
 Bu proje, bir kitap pazarı uygulaması olup, kullanıcıların pazara kitap ekleyebileceği, mevcut kitapları kendi kitaplıklarına ekleyebileceği ve kitapları silebileceği çeşitli fonksiyonlar sunmaktadır. 
 
+[![YouTube Tanıtım Videosu](https://img.youtube.com/vi/7Lbgggw8e0I/0.jpg)](https://www.youtube.com/watch?v=7Lbgggw8e0I)
+
 ## Özellikler
 
 - **Kitap Ekleme:** Kullanıcılar, pazara yeni kitaplar ekleyebilir.
